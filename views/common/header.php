@@ -3,10 +3,11 @@
 			<nav>
 				<ul>
 					<li>
-						<a href="">Home</a>
-						<a href="">About</a>
-						<a href="">News</a>
-						<a href="">Contact</a>
+						<!-- $this->data Can Be Accessed From Here Because header.php Is included Nn layout.php
+							 And layout.php Is Included In Controller.php -->
+						<?php foreach($this->data['menu'] as $key => $value): ?>
+							<a href="<?= $value['path'] ?>"><?= $value['name'] ?></a>
+						<?php endforeach; ?>
 					</li>
 				</ul>
 			</nav>

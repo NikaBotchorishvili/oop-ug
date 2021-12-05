@@ -14,20 +14,38 @@ class Page{
         $controllerName = $this->getControllerName();
 
         //  Load Particular Controller.
-        require_once $controllerPath;
+        require $controllerPath;
 
         //  Create A Controller Object and Render View.
-        $page = new $controllerName($this->pageName);
-        $page->renderView();
+        $controller = new $controllerName($this->pageName);
+        $controller->renderView();
+    }
+    
+    public function getModel(){
+        //  Define Model Path.
+        $modelPath = $this->getModelPath();
+
+        // Load Particular Model.
+        require_once $modelPath;
     }
 
     public function getControllerPath(){
-        //  Returns Controller Path Such as : controller/HomeController.php
+        //  Returns Controller Path Such As : controller/HomeController.php
         return "controllers/". $this->getControllerName(). ".php";
     }
 
     public function getControllerName(){
-        //  Returns A Controller Name Such as : HomeController.
+        //  Returns A Controller Name Such As : HomeController
         return ucfirst($this->pageName). "Controller";
+    }
+
+    public function getModelPath(){
+        // Returns A Model Path Suck As : models/Home.php
+        return "models/" . $this->getModelName() . ".php";
+    }
+
+    public function getModelName(){
+        //  Return A Model Name Such As : Home
+        return ucfirst($this->pageName);
     }
 }

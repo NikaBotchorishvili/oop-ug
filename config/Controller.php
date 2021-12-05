@@ -9,6 +9,9 @@ class Controller{
     //  Value Of $tpl Is Changed Based on Which Controllers index() Method We're Calling.
     public $tpl;
 
+    //  Array With The data Returned From models.
+    public $data = [];
+
     public function __construct($pageName){
         $this->pageName = $pageName;
     }
@@ -16,7 +19,7 @@ class Controller{
     public function renderView(){
     
         $this->index();
-        
+
         include "views/layout.php";
     }
 

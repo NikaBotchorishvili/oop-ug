@@ -6,7 +6,9 @@ class ContactController extends Controller{
 
     public function index(){
 
-        $contact = new Contact;
+        //  Contact Class Is Accessible Because We Call Page.php-s getModel() Method In index.php Which Loads 
+        //  Particular Model For Particular Controller.
+        $contact = new Contact();
         
         $this->data['menu'] = $contact->getMenu();
         $this->tpl = 'contact';

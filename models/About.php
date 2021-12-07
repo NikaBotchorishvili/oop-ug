@@ -1,12 +1,7 @@
 <?php
 
-use config\Database;
+use config\Model;
 
-class About extends Database{
+class About extends Model{
     
-    public function getMenu(){
-        $query = "SELECT * FROM menu ORDER BY ord asc";
-    
-        return $this->execute($query);
-    }
 }

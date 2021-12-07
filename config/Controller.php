@@ -2,7 +2,7 @@
 
 namespace config;
 
-class Controller{
+abstract class Controller{
 
     public $pageName;
 
@@ -12,9 +12,7 @@ class Controller{
     //  Array With The data Returned From models.
     public $data = [];
 
-    public function __construct($pageName){
-        $this->pageName = $pageName;
-    }
+    abstract public function index();
 
     public function renderView(){
     

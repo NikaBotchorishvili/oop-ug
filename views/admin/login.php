@@ -7,7 +7,13 @@
     <link rel="stylesheet" type="text/css" href="../assets/admin/css/style.css">
 </head>
 <body>
+
     <form id="login-form" method="POST" action="../admin/login.php">
+
+        <?php if(isset($_GET['u']) && $_GET['u'] == 0): ?>
+            <h5>Invalid Input</h5>
+        <?php endif?>
+            
         <h2>Admin Login</h2>
         <input type="text" name="username" class="text-field" placeholder="Username" />
         <input type="password" name="password" class="text-field" placeholder="Password" />

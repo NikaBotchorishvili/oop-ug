@@ -10,5 +10,3 @@ require_once "../config/AdminController.php";
 Session::start();
 
 $adminPage = new AdminPage($_GET);
-
-//Fixing required for redirection after login

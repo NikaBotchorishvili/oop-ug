@@ -1,8 +1,15 @@
-<header>
-    <ul>
-        <li>
-            <a href="">Home</a>
-            <a href="../admin/logout.php">Logout</a>
-        </li>
-    </ul>
-</header>
+<aside>
+    <header>
+        <ul>
+            <li>
+                <a href="/oop-ug/admin">Home</a>
+            </li>
+            <li>
+                <a href="/oop-ug/admin/?page=about">About</a>
+            </li>
+            <li>
+                <a href="/oop-ug/admin/logout.php">Logout</a>
+            </li>
+        </ul>
+    </header>
+</aside>

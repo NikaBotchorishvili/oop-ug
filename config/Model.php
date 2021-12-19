@@ -9,4 +9,8 @@ class Model extends Database{
     
         return $this->execute($query);
     }
+
+    public function getAboutData(){
+        return $this->getSingleData('about');
+    }
 }

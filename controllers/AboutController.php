@@ -11,6 +11,9 @@ class AboutController extends Controller{
         $about = new About();
 
         $this->data['menu'] = $about->getMenu();
+        $this->data['about'] = $about->getAboutData();
+        
         $this->tpl = "about";
     }
+
 }

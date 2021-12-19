@@ -34,6 +34,19 @@ class Database{
     public function getData($tableName){
         $data = [];
 
+        $query = "SELECT * FROM " . $tableName;
+
+        $sql = $this->pdo->prepare($tableName);
+        $sql->execute();
+
+        while($row = $sql->fetch()){
+            $data[] = $row;
+        }
+    }
+
+    public function getSingleData($tableName){
+        $data = [];
+
         $query = "SELECT * FROM ". $tableName;
 
         $sql = $this->pdo->prepare($query);
@@ -43,6 +56,11 @@ class Database{
            $data = $row;
         }
         return $data;
+    }
+
+    public function run($query){
+        $sql = $this->pdo->prepare($query);
+        $sql->execute();
     }
 
     public function execute($query){

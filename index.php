@@ -1,6 +1,4 @@
 <?php 
-
-
 require_once "helpers/Helper.php";
 require_once "config/Page.php";
 require_once "config/Database.php";

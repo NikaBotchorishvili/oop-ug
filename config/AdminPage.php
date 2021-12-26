@@ -30,7 +30,7 @@ class AdminPage{
 
         require_once $controllerPath;
 
-        $controller = New $controllerName();
+        $controller = new $controllerName($this->pageName);
 
         $controller->$action($_POST);
     }
@@ -41,7 +41,7 @@ class AdminPage{
 
         require_once $controllerPath;
 
-        $controller = new $controllerName;
+        $controller = new $controllerName($_GET);
 
         $controller->renderView();
     }

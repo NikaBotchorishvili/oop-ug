@@ -1,5 +1,5 @@
 <?php
-
+require_once "../config/Config.php";
 require_once "../helpers/Session.php";
 require_once "../config/Database.php";
 require_once "../config/Model.php";
@@ -15,9 +15,9 @@ if($id){
     Session::set('user_id', $id);
     //  Sets A $_SESSION Of user_id Key With Value Of $id
 
-    header("Location: /oop-ug/admin");
+    header("Location: " . HOST ."admin");
 }else{
-    header("Location: /oop-ug/admin/?u=0");
+    header("Location: " . HOST . "admin/?u=0");
     //  u=0 Is A $_GET Parameter For Error Handling. u Is Short For user. Error Handling Is Happening In
     //  views/admin/login.php
 }

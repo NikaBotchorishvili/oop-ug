@@ -15,6 +15,6 @@ class AboutController extends AdminController{
         $about = new About();
         $about->updateAboutData($data);
 
-        header("Location: /oop-ug/admin/?page=about");
+        header("Location: " . HOST . "admin/?page=about");
     }
 }

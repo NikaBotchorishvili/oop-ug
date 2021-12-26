@@ -7,10 +7,10 @@ use Exception;
 
 class Database{
 
-    protected $host = "localhost";
-    protected $username = "root";
-    protected $password = "";
-    protected $dbName = "oop-ug";
+    protected $host = DB_HOST;
+    protected $username = DB_USER;
+    protected $password = DB_PASS;
+    protected $dbName = DB_NAME;
 
     public $pdo;
     
@@ -36,13 +36,29 @@ class Database{
 
         $query = "SELECT * FROM " . $tableName;
 
-        $sql = $this->pdo->prepare($tableName);
+        $sql = $this->pdo->prepare($query);
         $sql->execute();
 
         while($row = $sql->fetch()){
             $data[] = $row;
         }
+        return $data;
     }
+
+    public function getById($tableName, $id){
+        $data = [];
+
+        $query = "SELECT * FROM ". $tableName . " WHERE id = " . $id;
+
+        $sql = $this->pdo->prepare($query);
+        $sql->execute();
+
+        while($row = $sql->fetch()){
+           $data = $row;
+        }
+        return $data;
+    }
+
 
     public function getSingleData($tableName){
         $data = [];

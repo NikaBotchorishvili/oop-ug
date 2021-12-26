@@ -1,5 +1,6 @@
 <?php
 
+require_once "../config/Config.php";
 require_once "../helpers/Helper.php";
 require_once "../helpers/Session.php";
 require_once "../config/AdminPage.php";

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2021 at 11:28 AM
+-- Generation Time: Jan 08, 2022 at 03:33 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -38,7 +38,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `title`, `text`) VALUES
-(1, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\n');
+(1, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.');
 
 -- --------------------------------------------------------
 
@@ -66,6 +66,27 @@ INSERT INTO `menu` (`id`, `name`, `path`, `ord`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `services`
+--
+
+CREATE TABLE `services` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `text` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`id`, `name`, `text`) VALUES
+(1, 'Consulting', 'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod Lorem ipsum dolor sit ametelit.'),
+(2, 'Finance', 'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod Lorem ipsum dolor sit ametelit.'),
+(3, 'Technology', 'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod Lorem ipsum dolor sit ametelit.');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -80,7 +101,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
-(2, 'admin', '12345678');
+(1, 'admin', '25d55ad283aa400af464c76d713c07ad');
 
 --
 -- Indexes for dumped tables
@@ -96,6 +117,12 @@ ALTER TABLE `about`
 -- Indexes for table `menu`
 --
 ALTER TABLE `menu`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `services`
+--
+ALTER TABLE `services`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -122,10 +149,16 @@ ALTER TABLE `menu`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `services`
+--
+ALTER TABLE `services`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

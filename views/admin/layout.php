@@ -21,5 +21,10 @@ include "common/header.php";
 
 </div>
 
+
+<script>
+    var siteUrl = "<?= HOST ?>"
+</script>
+<script src="<?= HOST ?>assets/admin/js/script.js"></script>
 </body>
 </html>

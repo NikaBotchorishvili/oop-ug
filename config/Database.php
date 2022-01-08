@@ -91,4 +91,10 @@ class Database{
 
         return $data;
     }
+
+    public function deleteById($tableName, $id){
+        $query = "DELETE FROM " . $tableName . " WHERE id = " . $id;
+
+        $this->run($query);
+    }
 }

@@ -18,7 +18,7 @@ class ServicesController extends AdminController{
     public function store($data){
         $services = new Services();
 
-        $services->insertData($data);
+        $services->insertService($data);
 
         header("Location: " . HOST . "admin/?page=services");
     }
@@ -34,15 +34,17 @@ class ServicesController extends AdminController{
     public function update($data){
         $services = new Services();
 
-        $services->updateData($data);
+        $services->updateService($data);
         
         header("Location: " . HOST . "admin/?page=services");
     }
 
-    public function delete(){
+    public function delete($data){
+
         $services = new Services();
 
-        $services->deleteService();
-        header("Location: " . HOST . "admin/?page=services");
+        $services->deleteById('services', $data['id']);
+        
+        echo 1;
     }
 }

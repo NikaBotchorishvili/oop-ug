@@ -8,7 +8,7 @@
         <th>ID</th>
         <th>Name</th>
         <th>Text</th>
-        <th>Actions</th>
+        <th class="table-actions">Actions</th>
     </tr>
     <?php foreach($this->data['services'] as $key => $value): ?>
         <tr>
@@ -17,7 +17,7 @@
             <td><?= $value['text'] ?></td>
             <td>
                 <a class="btn-edit btn-action" href="<?= HOST . 'admin/?page=services&action=edit&id=' . $value['id']?>">Edit</a>
-                <a class="btn-delete btn-action"href="<?= HOST . 'admin/?page=services&action=delete&id=' . $value['id'] ?>">Delete</a>
+                <a class="btn-delete btn-action" data-id="<?= $value['id'] ?>">Delete</a>
             </td>
         </tr>
     <?php endforeach; ?>

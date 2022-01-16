@@ -14,3 +14,4 @@ $page = new Page($_GET);
 
 $page->getModel();
 $page->getController();
+

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2022 at 03:33 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Generation Time: Jan 16, 2022 at 05:48 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `about` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
-  `text` text NOT NULL
+  `text` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`id`, `title`, `text`) VALUES
-(1, 'Lorem Ipsum', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.');
+(1, 'about title', 'about text');
 
 -- --------------------------------------------------------
 
@@ -61,7 +61,31 @@ INSERT INTO `menu` (`id`, `name`, `path`, `ord`) VALUES
 (1, 'Home', '?page=home', 1),
 (2, 'About', '?page=about', 2),
 (3, 'News', '?page=news', 3),
-(4, 'Contact', '?page=Contact', 4);
+(4, 'Contact', '?page=contact', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `short_text` text NOT NULL,
+  `text` text NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `publish_date` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `short_text`, `text`, `image`, `publish_date`) VALUES
+(1, 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vulputate cursus lectus in volutpat. Curabitur blandit molestie metus, id commodo tellus ultrices at. Sed at rhoncus elit. Aliquam urna quam', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vulputate cursus lectus in volutpat. Curabitur blandit molestie metus, id commodo tellus ultrices at. Sed at rhoncus elit. Aliquam urna quam, consectetur nec imperdiet non, consectetur non mi. Vestibulum vestibulum turpis turpis, ac hendrerit nisl ullamcorper nec. Praesent blandit vel dui tempus auctor. Fusce dictum mauris nec fermentum dictum. Sed eu gravida neque, nec faucibus nibh. Proin gravida gravida felis, vitae feugiat purus dignissim vehicula. Donec blandit tellus ac leo pharetra commodo. Fusce congue commodo ullamcorper', 'img-1642349225.jpg', '2022-01-16'),
+(2, 'Curabitur ante ante', 'Vestibulum tempor lacus luctus pretium tempor. Mauris varius eget sapien et ullamcorper. Sed non ullamcorper lectus, quis imperdiet nisi.', 'Vestibulum tempor lacus luctus pretium tempor. Mauris varius eget sapien et ullamcorper. Sed non ullamcorper lectus, quis imperdiet nisi. Cras convallis orci volutpat enim elementum aliquet. Phasellus auctor metus in elementum efficitur. Suspendisse ultrices pretium augue. Phasellus mattis ligula sed mauris luctus, porttitor vestibulum nisl suscipit. Quisque dapibus, odio quis volutpat lobortis, erat augue dignissim ligula, dapibus porta erat nulla vel eros. Maecenas at ornare ipsum, blandit mattis purus. Aenean congue felis quis eros maximus, ac ullamcorper enim fringilla. Etiam tincidunt felis quis ex feugiat, eu sagittis ante tempor. Donec eu magna nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc nec neque fermentum, aliquam nunc vel, malesuada enim.', 'download-1642349298.jfif', '2022-01-16'),
+(3, 'Nunc tincidunt', 'Donec augue tortor, ultricies a efficitur dignissim, pretium ac dui. Aliquam ut luctus nulla, non blandit mauris. In molestie euismod eleifend.', 'Donec augue tortor, ultricies a efficitur dignissim, pretium ac dui. Aliquam ut luctus nulla, non blandit mauris. In molestie euismod eleifend. Suspendisse tempus commodo ornare. Praesent ullamcorper nec leo non fringilla. Praesent laoreet varius dignissim. Aenean massa erat, blandit nec aliquam sed, faucibus sed leo. Donec a mauris nec erat pellentesque dapibus. Quisque ante urna, ultrices nec justo vulputate, condimentum rhoncus libero.', 'GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596-1642349351.jpg', '2022-01-16');
 
 -- --------------------------------------------------------
 
@@ -72,7 +96,7 @@ INSERT INTO `menu` (`id`, `name`, `path`, `ord`) VALUES
 CREATE TABLE `services` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `text` text NOT NULL
+  `text` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -120,6 +144,12 @@ ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `services`
 --
 ALTER TABLE `services`
@@ -129,8 +159,7 @@ ALTER TABLE `services`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -146,6 +175,12 @@ ALTER TABLE `about`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --

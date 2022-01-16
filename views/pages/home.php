@@ -1,4 +1,3 @@
-
 <main>
 	<section class="section-1" style="background-image: url('assets/images/img.jpg');">
 		<div class="shadow"></div>

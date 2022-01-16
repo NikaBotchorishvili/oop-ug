@@ -21,7 +21,6 @@ include "common/header.php";
 
 </div>
 
-
 <script>
     var siteUrl = "<?= HOST ?>"
 </script>

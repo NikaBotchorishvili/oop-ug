@@ -5,11 +5,15 @@
         <input type="text" required name="name">
     </div>
     <div class="form-group">
-        <label for="text">Text</label>
-        <textarea name="text" required></textarea>
+        <label for="path">Path</label>
+        <input type="text" required name="path">
+    </div>
+    <div class="form-group">
+        <label for="order">Order</label>
+        <input type="text" required name="order">
     </div>
 
     <div class="form-group">
-        <button class="btn" required>Insert</button>
+        <button class="btn">Insert</button>
     </div>
 </form>

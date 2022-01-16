@@ -11,6 +11,12 @@
                 <a href="/oop-ug/admin/?page=services">Services</a>
             </li>
             <li>
+                <a href="/oop-ug/admin/?page=news">News</a>
+            </li>
+            <li>
+                <a href="/oop-ug/admin/?page=menu">Menu</a>
+            </li>
+            <li>
                 <a href="/oop-ug/admin/logout.php">Logout</a>
             </li>
         </ul>

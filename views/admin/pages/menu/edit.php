@@ -3,13 +3,16 @@
     <input type="hidden" name="id" value="<?= $_GET['id']?>">
     <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" name="name" value="<?= $this->data['service']['name'] ?>">
+        <input type="text" name="name" value="<?= $this->data['menu']['name'] ?>">
     </div>
     <div class="form-group">
-        <label for="text">Text</label>
-        <textarea name="text"><?= $this->data['service']['text'] ?></textarea>
+        <label for="path">Path</label>
+        <textarea name="path"><?= $this->data['menu']['path'] ?></textarea>
     </div>
-
+    <div class="form-group">
+        <label for="order">Order</label>
+        <input type="text" name="order" value="<?= $this->data['menu']['ord'] ?>">
+    </div>
     <div class="form-group">
         <button class="btn">Edit</button>
     </div>

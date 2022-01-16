@@ -17,7 +17,7 @@
             <td><?= $value['text'] ?></td>
             <td>
                 <a class="btn-edit btn-action" href="<?= HOST . 'admin/?page=services&action=edit&id=' . $value['id']?>">Edit</a>
-                <a class="btn-delete btn-action" data-id="<?= $value['id'] ?>">Delete</a>
+                <a class="btn-delete btn-action" data-id="<?= $value['id'] ?>" data-page="services">Delete</a>
             </td>
         </tr>
     <?php endforeach; ?>

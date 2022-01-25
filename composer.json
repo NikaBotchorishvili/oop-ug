@@ -1,0 +1,13 @@
+{
+    "name": "user/oop-ug",
+    
+    "authors": [
+        {
+            "name": "NikaBotchorishvili",
+            "email": "nikabotchorishvili@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.5"
+    }
+}

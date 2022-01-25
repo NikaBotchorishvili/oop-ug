@@ -1,5 +1,7 @@
 <?php
 
+require_once "vendor/autoload.php";
+
 require_once "config/Config.php";
 require_once "helpers/Helper.php";
 require_once "config/Page.php";
@@ -14,4 +16,3 @@ $page = new Page($_GET);
 
 $page->getModel();
 $page->getController();
-
